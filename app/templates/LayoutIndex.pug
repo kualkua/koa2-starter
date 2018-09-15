@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    if(css)
+        each csss in css
+            link(rel="stylesheet" href=csss)
+    title=title
+  body
+    header
+      nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+        a.navbar-brand(href='/') Navbar
+        button.navbar-toggler.collapsed(
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        )
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarsExampleDefault
+          ul.navbar-nav.mr-auto
+            li.nav-item
+              a.nav-link(
+                href="/"
+                class=(activeMenu == 'home' && 'active')
+              ) Home
+            li.nav-item
+              a.nav-link(
+                href="/about"
+                class=(activeMenu == 'about' && 'active')
+              ) About
+            li.nav-item
+              a.nav-link(
+                href="/contact"
+                class=(activeMenu == 'contact' && 'active')
+              ) Contact
+            li.nav-item
+              a.nav-link(
+                href="/login"
+                class=(activeMenu == 'login' && 'active')
+              ) Login
+
+
+
+    main.container(role="main")
+      .container
+        block content
+    footer.container
+      p © Company 2017-2018
+
+    if(scripts)
+        each js in scripts
+            script(src=js)

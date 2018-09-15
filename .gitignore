@@ -1,0 +1,10 @@
+.idea
+node_modules
+logs
+package-lock.json
+.DS_Store
+dist/
+.vscode/
+helpers/
+app/config/local.js
+data/db

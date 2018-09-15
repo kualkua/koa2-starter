@@ -1,0 +1,14 @@
+extend LayoutIndex
+
+block content
+  .jumbotron
+    .container
+      form(method="post")
+        .form-group
+          label(for="inputEmail") Email address
+          input.form-control#inputEmail(type="email")
+        .form-group
+          label(for="inputPassword") Email address
+          input.form-control#inputPassword(type="password")
+        button.btn.btn-primary(type="submit") Login
+

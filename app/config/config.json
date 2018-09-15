@@ -1,0 +1,9 @@
+{
+    "development": {
+        "username": "koa-starter",
+        "password": "koa-starter",
+        "database": "koa-starter",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
+}

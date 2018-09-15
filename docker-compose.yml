@@ -1,0 +1,57 @@
+version: '3.3'
+
+services:
+  db:
+    container_name: mysqldating
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: koa-starter
+      MYSQL_PASSWORD: koa-starter
+      MYSQL_DATABASE: koa-starter
+    volumes:
+      - ./data/db:/var/lib/mysql
+      - ./logs/mysql:/var/log/mysql
+      - ./data/my.cnf:/etc/mysql/my.cnf
+
+  # rabbit: 
+  #   image: "rabbitmq:3-management"
+  #   environment:
+  #     RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+  #     RABBITMQ_DEFAULT_USER: "rabbitmq"
+  #     RABBITMQ_DEFAULT_PASS: "rabbitmq"
+  #     RABBITMQ_DEFAULT_VHOST: "/"
+  #   ports:
+  #     - "15673:15672"
+  #     - "5673:5672"
+  #   labels:
+  #     NAME: "rabbitmq1"
+  #   volumes:
+  #     - "./enabled_plugins:/etc/rabbitmq/enabled_plugins"
+
+  # mongodb:
+  #   image: mongo:latest
+  #   container_name: "datingmongodb"
+  #   environment:
+  #     # TERM: xterm
+  #     MONGO_INITDB_ROOT_USERNAME: "foo"
+  #     MONGO_INITDB_ROOT_PASSWORD: "foo"
+  #     MONGO_INITDB_DATABASE: "dating"
+  #     MONGODB_HOST: "mongodating"
+  #     MONGODB_URI: "mongodating"
+      
+  #     MONGODB_PORT: "27017"
+  #     MONGODB_DATABASE: dating  
+  #     MONGODB_USER: "foo"
+  #     MONGODB_PASS: "foo"
+      
+  #     MONGO_DATA_DIR: /data/db
+  #     MONGO_LOG_DIR: /dev/null
+  #   volumes:
+  #     - ./data/db:/data/db
+  #   ports:
+  #       - 27018:27017
+  #   command: mongod --smallfiles --logpath=/dev/null # --quiet

@@ -1,0 +1,7 @@
+--recursive tests/**/*.spec.ts
+--reporter spec
+--colors
+--timeout 100000
+--require should
+--recursive
+--slow 250
